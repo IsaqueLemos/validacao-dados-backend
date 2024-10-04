@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style.css" />
+    <title>Escola Virtual</title>
+  </head>
+  <body>
+    <header>
+      <h1>Escola Virtual</h1>
+      <h2>Formulário de Pré-Matrícula</h2>
+    </header>
+
+    <% if (erros.length > 0) { %>
+    <ul>
+      <% erros.forEach(function(erro) { %>
+      <li><%= erro %></li>
+      <% }); %>
+    </ul>
+    <% } %>
+
+    <main>
+      <form action="/submeter" method="post">
+        <div class="form-group">
+          <fieldset>
+            <label for="nomeAluno">Nome do Aluno:</label>
+            <input
+              type="text"
+              id="nomeAluno"
+              name="nomeAluno"
+              value="<%= dados.nomeAluno || '' %>"
+              required
+            />
+          </fieldset>
+
+          <fieldset>
+            <label>Data Nascimento:</label>
+            <input
+              type="date"
+              name="dataNascimento"
+              value="<%= dados.dataNascimento || '' %>"
+              required
+            />
+          </fieldset>
+
+          <fieldset>
+            <label for="nomeMae">Nome da Mãe:</label>
+            <input
+              type="text"
+              id="nomeMae"
+              name="nomeMae"
+              value="<%= dados.nomeMae || '' %>"
+              required
+            />
+          </fieldset>
+
+          <fieldset>
+            <label for="nomePai">Nome do Pai:</label>
+            <input
+              type="text"
+              id="nomePai"
+              name="nomePai"
+              value="<%= dados.nomePai || '' %>"
+              required
+            />
+          </fieldset>
+
+          <fieldset class="telefone-group">
+            <label for="ddd">DDD</label>
+            <input
+              type="text"
+              id="ddd"
+              name="ddd"
+              size="2"
+              maxlength="2"
+              value="<%= dados.ddd || '' %>"
+              required
+            />
+
+            <label for="telefone">Tel:</label>
+            <input
+              type="text"
+              id="telefone"
+              name="telefone"
+              size="9"
+              maxlength="9"
+              value="<%= dados.telefone || '' %>"
+              required
+            />
+
+            <label for="ramal">Ramal:</label>
+            <input
+              type="text"
+              id="ramal"
+              name="ramal"
+              size="4"
+              maxlength="4"
+              value="<%= dados.ramal || '' %>"
+            />
+          </fieldset>
+
+          <fieldset>
+            <label for="email">E-mail:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value="<%= dados.email || '' %>"
+              required
+            />
+          </fieldset>
+        </div>
+
+        <div class="form-group">
+          <fieldset>
+            <!-- Select da série -->
+            <label for="serie">Série:</label>
+            <select name="serie" id="serie" required>
+              <option value="preescola">pré-escolar</option>
+              <option value="1ano">1º ano</option>
+              <option value="2ano">2º ano</option>
+              <option value="3ano">3º ano</option>
+            </select>
+          </fieldset>
+
+          <fieldset>
+            <!-- Radio button do turno manhã e tarde -->
+            <label>Turno:</label>
+
+            <input
+              type="radio"
+              name="turno"
+              value="manha"
+              id="manha"
+              required
+            />
+            <label for="manha">Manhã</label>
+            <input
+              type="radio"
+              name="turno"
+              value="tarde"
+              id="tarde"
+              required
+            />
+            <label for="tarde">Tarde</label>
+          </fieldset>
+
+          <fieldset>
+            <!-- Checkbox atividades extracurriculares -->
+            <label>Atividades Extracurriculares:</label>
+            <input
+              type="checkbox"
+              name="atividades"
+              value="informatica"
+              id="informatica"
+            />
+            <label for="informatica">Informática</label>
+            <input
+              type="checkbox"
+              name="atividades"
+              value="musica"
+              id="musica"
+            />
+            <label for="musica">Música</label>
+            <input type="checkbox" name="atividades" value="balet" id="balet" />
+            <label for="balet">Balet</label>
+            <input
+              type="checkbox"
+              name="atividades"
+              value="pintura"
+              id="pintura"
+            />
+            <label for="pintura">Pintura</label>
+            <input type="checkbox" name="atividades" value="judo" id="judo" />
+            <label for="judo">Judô</label>
+            <input
+              type="checkbox"
+              name="atividades"
+              value="futebol"
+              id="futebol"
+            />
+            <label for="futebol">Futebol</label>
+          </fieldset>
+        </div>
+
+        <!-- Enviar Formulário ou Limpar Campos -->
+        <div class="form-group">
+          <button type="submit">Enviar Formulário</button>
+          <button type="reset">Limpar Campos</button>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>

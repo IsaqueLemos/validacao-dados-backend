@@ -1,0 +1,119 @@
+/* Estilo Geral */
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f7f8fc;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  text-align: center;
+  margin-top: 20px;
+}
+
+h1 {
+  color: #333;
+  font-size: 2.5em;
+}
+
+h2 {
+  color: #555;
+  margin-top: 10px;
+}
+
+form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+  margin-top: 20px;
+}
+
+fieldset {
+  margin-bottom: 20px;
+  border: none;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Flexbox para DDD, telefone e ramal */
+.telefone-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.telefone-group fieldset {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.telefone-group fieldset:last-child {
+  margin-right: 0;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  width: auto;
+}
+
+button {
+  padding: 10px 15px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 1em;
+}
+
+button[type="reset"] {
+  background-color: #f44336;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  color: #ff4444;
+  margin-bottom: 20px;
+}
+
+ul li {
+  margin-bottom: 5px;
+}
+
+/* Agrupando as atividades extracurriculares em linha */
+fieldset input[type="checkbox"] + label,
+fieldset input[type="radio"] + label {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+/* Estilo para os grupos de formulários */
+.form-group {
+  margin-bottom: 20px;
+}
